@@ -41,7 +41,7 @@ function Navbar() {
             {/* ------------> Transparent BG End */}
 
             {/* ------------> Res.Side Menu Start */}
-            <div className={nav ? 'fixed top-0 left-0 w-[300px] h-screen bg-white z-10 duration-300' : 'fixed top-0 left-[-100%] w-[300px] h-screen bg-white z-10 duration-300'}>
+            <div className={nav ? 'fixed top-0 left-0 w-[300px] h-screen bg-white z-20 duration-300' : 'fixed top-0 left-[-100%] w-[300px] h-screen bg-white duration-300'}>
                 <AiOutlineClose onClick={() => setNavbar(!nav)} size={40} className='absolute right-4 top-4 cursor-pointer'></AiOutlineClose>
                 <h2 className='text-2xl p-4 text-purple-400'>
                     Erciyes <span className='font-bold text-purple-800'>Kayseri</span>
