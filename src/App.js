@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import Slider from './components/Slider';
 import Suggestions from './components/Suggestions';
+import Activities from './components/Activities';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Navbar></Navbar>
       <Slider></Slider>
       <Suggestions></Suggestions>
+      <Activities></Activities>
     </div>
   );
 }
