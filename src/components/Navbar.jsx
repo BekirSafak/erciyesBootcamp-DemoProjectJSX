@@ -48,22 +48,22 @@ function Navbar() {
                 </h2>
                 <nav>
                     <ul className='flex flex-col p-4 text-gray-800'>
-                        <li className='text-xl py-4 flex'>
+                        <li className='text-xl py-4 flex hover:text-purple-800 cursor-pointer'>
                             <FaParachuteBox size={25} className='mr-4'></FaParachuteBox> Kampanyalar
                         </li>
-                        <li className='text-xl py-4 flex'>
+                        <li className='text-xl py-4 flex hover:text-purple-800 cursor-pointer'>
                             <TbTruckDelivery size={25} className='mr-4'></TbTruckDelivery> Siparişlerim
                         </li>
-                        <li className='text-xl py-4 flex'>
+                        <li className='text-xl py-4 flex hover:text-purple-800 cursor-pointer'>
                             <MdFavorite size={25} className='mr-4'></MdFavorite> Favorilerim
                         </li>
-                        <li className='text-xl py-4 flex'>
+                        <li className='text-xl py-4 flex hover:text-purple-800 cursor-pointer'>
                             <FaIcons size={25} className='mr-4'></FaIcons> Etkinlikler
                         </li>
-                        <li className='text-xl py-4 flex'>
+                        <li className='text-xl py-4 flex hover:text-purple-800 cursor-pointer'>
                             <FaWallet size={25} className='mr-4'></FaWallet> Biletlerim
                         </li>
-                        <li className='text-xl py-4 flex'>
+                        <li className='text-xl py-4 flex hover:text-purple-800 cursor-pointer'>
                             <MdHelp size={25} className='mr-4'></MdHelp> S.S.S
                         </li>
                     </ul>
