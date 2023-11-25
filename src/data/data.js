@@ -37,7 +37,7 @@ export const data = [
     {
         id: 6,
         name: 'PERA Konseri',
-        category: 'concert',
+        category: 'music',
         image: require('../assets/singer1.jpg'),
         price: 350
     },
