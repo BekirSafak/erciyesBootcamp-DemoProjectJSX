@@ -5,9 +5,9 @@ function Footer() {
     return (
         <div className='bg-purple-100'>
             <div className='max-w-[1640px] mx-auto items-center p-4'>
-                <div className='flex items-center justify-between w-full'>
+                <div className='flex flex-col md:flex-row items-center justify-between w-full'>
                     <h1 className='text-2xl sm:text-3xl lg:text-4xl text-purple-400 cursor-pointer'>Erciyes<span className='font-bold text-purple-800'>Kayseri</span></h1>
-                    <p className='select-none text-purple-400 font-bold'>Kayserinin en iyi etkinliklerini düzenleyen milyonlara ulaştıran yeni nesil online sosyal etkinlik sitesi.</p>
+                    <p className='select-none invisible lg:visible text-purple-400 font-bold px-2 indent-2'>Kayserinin en iyi etkinliklerini düzenleyen milyonlara ulaştıran yeni nesil online sosyal etkinlik sitesi.</p>
                     <div className='flex gap-4'>
                         <a className='bg-purple-800 hover:bg-purple-400 duration-300 p-4 rounded-full text-white' href=""><FaFacebookF /></a>
                         <a className='bg-purple-800 hover:bg-purple-400 duration-300 p-4 rounded-full text-white' href=""><FaInstagram /></a>
@@ -17,12 +17,12 @@ function Footer() {
                 </div>
 
                 {/* Footer Links Start */}
-                <div className='mt-10 flex items-center justify-between'>
+                <div className='mt-10 flex flex-col md:flex-row items-center justify-between'>
 
                     {/* Footer Company Links Start */}
                     <div>
-                        <h2 className='select-none mb-2 text-lg sm:text-2lg lg:text-3lg font-bold text-purple-800'>Kurumsal</h2>
-                        <ul className='flex flex-col'>
+                        <h2 className='select-none mb-2 text-center md:text-start text-lg sm:text-2lg lg:text-3lg font-bold text-purple-800'>Kurumsal</h2>
+                        <ul className='flex flex-col items-center md:items-start'>
                             <li className='flex text-sm text-purple-400 hover:text-purple-800 cursor-pointer duration-300 py-1 font-bold'>
                                 Hakkımızda
                             </li>
@@ -50,8 +50,8 @@ function Footer() {
 
                     {/* Footer Category Links Start */}
                     <div>
-                        <h2 className='select-none mb-2 text-lg sm:text-2lg lg:text-3lg font-bold text-purple-800'>Kategoriler</h2>
-                        <ul className='flex flex-col'>
+                        <h2 className='select-none mb-2 text-center md:text-start text-lg sm:text-2lg lg:text-3lg font-bold text-purple-800'>Kategoriler</h2>
+                        <ul className='flex flex-col items-center md:items-start'>
                             <li className='flex text-sm text-purple-400 hover:text-purple-800 cursor-pointer duration-300 py-1 font-bold'>
                                 Konser
                             </li>
