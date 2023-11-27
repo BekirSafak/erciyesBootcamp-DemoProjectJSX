@@ -17,9 +17,11 @@ import { Link } from 'react-router-dom'
 import { AiOutlineClose } from 'react-icons/ai';
 
 function Suggestions() {
+    // MUI Func Start
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false)
+    // MUI Func End
 
     // MUI Style Start
     // const style = {
@@ -44,6 +46,7 @@ function Suggestions() {
                     <p className='select-none font-bold text-2xl px-2 pt-4'>Çukurova Rock Festivali</p>
                     <p className='select-none invisible lg:visible indent-2 px-2'>Tüm müzikseverlere %100 müzik ve eğlence ile gerçek bir festival deneyimi yaşatacak olan festival.</p>
                     <Modal
+                        className='opacity-50'
                         open={open}
                         onClose={handleClose}
                         aria-labelledby="modal-modal-title"

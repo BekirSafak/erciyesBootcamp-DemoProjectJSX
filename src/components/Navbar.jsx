@@ -4,6 +4,7 @@ import { BsFillCartFill } from "react-icons/bs";
 import { TbTruckDelivery } from "react-icons/tb";
 import { MdFavorite, MdHelp } from "react-icons/md";
 import { FaWallet, FaIcons, FaParachuteBox } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 function Navbar() {
     let [nav, setNavbar] = useState(false);
@@ -14,7 +15,9 @@ function Navbar() {
                 <div onClick={() => setNavbar(!nav)} className='cursor-pointer'>
                     <AiOutlineMenu size={30}></AiOutlineMenu>
                 </div>
-                <h1 className='text-2xl sm:text-3xl lg:text-4xl px-2 text-purple-400'>Erciyes <span className='font-bold text-purple-800'>Kayseri</span></h1>
+                <Link to={'/'}>
+                    <h1 className='text-2xl sm:text-3xl lg:text-4xl px-2 text-purple-400'>Erciyes<span className='font-bold text-purple-800'>Kayseri</span></h1>
+                </Link>
                 <div className='hidden lg:flex item-center bg-gray-200 rounded-full p-1 text[14px]'>
                     <p className='bg-black text-white rounded-full p-2'>Karanlık</p>
                     <p className='p-2'>Aydınlık</p>
@@ -48,9 +51,9 @@ function Navbar() {
                 </h2>
                 <nav>
                     <ul className='flex flex-col p-4 text-gray-800'>
-                        <li className='text-xl py-4 flex hover:text-purple-800 cursor-pointer'>
+                        <Link to={'/campains'} className='text-xl py-4 flex hover:text-purple-800 cursor-pointer'>
                             <FaParachuteBox size={25} className='mr-4'></FaParachuteBox> Kampanyalar
-                        </li>
+                        </Link>
                         <li className='text-xl py-4 flex hover:text-purple-800 cursor-pointer'>
                             <TbTruckDelivery size={25} className='mr-4'></TbTruckDelivery> Siparişlerim
                         </li>
