@@ -1,8 +1,16 @@
 import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { data } from "../data/data.js";
+import Maps from '../components/Maps.jsx';
+import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
+import { mapOptions } from '../components/MapConfing.jsx';
+
 
 function ActivitiesDetails() {
+    const { isLoaded } = useJsApiLoader({
+        id: mapOptions.googleMapApiKey,
+        googleMapsApiKey: mapOptions.googleMapApiKey
+    })
 
     const { id } = useParams()
 
@@ -10,7 +18,7 @@ function ActivitiesDetails() {
 
     return (
         <div className='max-w-[1640px] mx-auto px-4 py-12'>
-            <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 pt-4 content-center w-full'>
+            <div className='mb-4 grid grid-cols-1 lg:grid-cols-3 gap-4 pt-4 content-center w-full'>
                 <img className='shadow-lg shadow-purple-400 col-span-2 rounded-lg h-full' src={activityID.image} alt={activityID.name} />
                 {/* Forms Start */}
                 <div className='shadow-lg shadow-purple-400 rounded-lg'>
@@ -95,6 +103,7 @@ function ActivitiesDetails() {
                 {/* Forms End */}
 
             </div>
+            <Maps isLoaded={isLoaded} ></Maps>
 
         </div>
     )
