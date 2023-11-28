@@ -20,11 +20,15 @@ function Maps(maps) {
     //     lat: 38.746,
     //     lng: 35.530
     // };
+
     return isLoaded && (
         <GoogleMap
             mapContainerStyle={containerStyle}
             center={locationsID.location}
-            zoom={10}
+            zoom={15}
+            options={{
+                mapTypeId: 'terrain',
+            }}
         >
             <Marker position={locationsID.location}></Marker>
         </GoogleMap>
