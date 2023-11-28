@@ -18,10 +18,10 @@ function ActivitiesDetails() {
 
     return (
         <div className='max-w-[1640px] mx-auto px-4 py-12'>
-            <div className='mb-4 grid grid-cols-1 lg:grid-cols-3 gap-4 pt-4 content-center w-full'>
+            <div className='mb-4 grid grid-cols-1 lg:grid-cols-3 gap-0 lg:gap-4 pt-4 content-center w-full'>
                 <img className='shadow-lg shadow-purple-400 col-span-2 rounded-lg h-full' src={activityID.image} alt={activityID.name} />
                 {/* Forms Start */}
-                <div className='shadow-lg shadow-purple-400 rounded-lg'>
+                <div className='shadow-lg shadow-purple-400 rounded-lg p-4'>
                     <div className="py-12 grid justify-items-center">
                         <h2 className="text-purple-800 text-3xl font-bold">{activityID.name}</h2>
                         <div className="mt-8 max-w-md grid grid-cols-1">

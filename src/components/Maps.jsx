@@ -1,5 +1,5 @@
 import React from 'react'
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
+import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
 
 function Maps(maps) {
     const { isLoaded } = maps
@@ -19,7 +19,7 @@ function Maps(maps) {
             center={center}
             zoom={10}
         >
-            <></>
+            <Marker position={center}></Marker>
         </GoogleMap>
     )
 }
