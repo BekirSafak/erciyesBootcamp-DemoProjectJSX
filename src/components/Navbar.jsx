@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 function Navbar() {
     let [nav, setNavbar] = useState(false);
     return (
-        <div className="max-w-[1640px] mx-auto flex justify-between items-center p-4">
+        <div className="max-w-[1640px] mx-auto flex justify-between items-center p-4 sticky top-0 bg-white z-30">
             {/* Left Side Start */}
             <div className='flex items-center'>
                 <div onClick={() => setNavbar(!nav)} className='cursor-pointer'>
@@ -28,7 +28,8 @@ function Navbar() {
             {/* Search Input Start */}
             <div className='bg-gray-200 rounded-full flex items-center px-2 w-[200px] sm:w-[400px] lg:w-[500px]'>
                 <AiOutlineSearch size={25}></AiOutlineSearch>
-                <input className='bg-transparent p-2 focus:outline-none w-full' type="text" placeholder='Özgürce tüm etkinleri arayabilirsiniz...' />
+                {/*   class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" */}
+                <input className='bg-transparent p-2 w-full border-none shadow-sm focus:border-none focus:ring-0 focus:ring-opacity-50' type="text" placeholder='Özgürce tüm etkinleri arayabilirsiniz...' />
             </div>
             {/* Search Input End */}
 

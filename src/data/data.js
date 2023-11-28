@@ -1,13 +1,13 @@
 export const data = [
     {
-        id: 1,
+        "id": 1,
         name: 'MilyonFest Kayseri',
         category: 'concert',
         image: require('../assets/concert.jpg'),
         price: 100
     },
     {
-        id: 2,
+        "id": 2,
         name: 'Çukurova Rock Festivali',
         category: 'concert',
         image: require('../assets/concert1.jpg'),

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { data } from '../data/data.js';
+import { Link } from 'react-router-dom';
 
 function Activities() {
     console.log(data)
@@ -77,6 +78,13 @@ function Activities() {
                                 <span className='bg-purple-800 text-white p-1 rounded-full'>{item.price}</span>
                             </p>
                         </div>
+
+                        {/* Buy BTN Start */}
+                        <div className='flex justify-between px-2 py-4 border-t-2'>
+                            <Link to={`activitiesdetails/${item.id}`} className='bg-purple-400 hover:bg-purple-800 duration-300 text-white px-5 py-1 rounded-full border-none'>Detaylar</Link>
+                            <button className='bg-purple-800 hover:bg-purple-400 duration-300 text-white px-5 py-1 rounded-full border-none'>Sepete Ekle</button>
+                        </div>
+                        {/* Buy BTN End */}
                     </div>
                 ))}
             </div>
