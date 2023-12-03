@@ -63,8 +63,11 @@ function Navbar() {
             {/* Search Input End */}
 
             {/* Cart Button Start */}
-            <Link to={'/orders'} className='bg-purple-800 hover:bg-purple-400 duration-300 text-white hidden md:flex items-center px-5 py-2 rounded-full border-none'>
+            <Link to={'/orders'} className='relative bg-purple-800 hover:bg-purple-400 duration-300 text-white hidden md:flex items-center px-5 py-2 rounded-full border-none'>
                 <BsFillCartFill size={20} className='mr-2'></BsFillCartFill> Sepet
+                <div className='bg-purple-400 hover:bg-purple-800 w-6 h-6 rounded-full flex items-center justify-center absolute -bottom-1 -left-2'>
+                    <span>4</span>
+                </div>
             </Link>
             {/* Cart Button End */}
 
