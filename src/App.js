@@ -10,6 +10,7 @@ import Details from './pages/Details';
 import Campain from './pages/Campain';
 import ActivitiesDetails from './pages/ActivitiesDetails';
 import { Route, Routes, Link, NavLink, Navigate, useNavigate, Router } from 'react-router-dom';
+import Orders from './pages/Orders';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path='/' element={<Homemain></Homemain>}></Route>
         <Route path='/details' element={<Details></Details>}></Route>
         <Route path='/campains' element={<Campain></Campain>}></Route>
+        <Route path='/orders' element={<Orders></Orders>}></Route>
         <Route path='/activitiesdetails/:id' element={<ActivitiesDetails></ActivitiesDetails>}></Route>
       </Routes>
       <Footer></Footer>
