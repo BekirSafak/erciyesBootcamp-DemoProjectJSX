@@ -90,9 +90,9 @@ function Navbar() {
                         <Link to={'/orders'} className='text-xl py-4 flex hover:text-purple-800 duration-300 cursor-pointer'>
                             <TbTruckDelivery size={25} className='mr-4'></TbTruckDelivery> Siparişlerim
                         </Link>
-                        <li className='text-xl py-4 flex hover:text-purple-800 duration-300 cursor-pointer'>
+                        <Link to={'/favorites'} className='text-xl py-4 flex hover:text-purple-800 duration-300 cursor-pointer'>
                             <MdFavorite size={25} className='mr-4'></MdFavorite> Favorilerim
-                        </li>
+                        </Link>
                         <li className='text-xl py-4 flex hover:text-purple-800 duration-300 cursor-pointer'>
                             <FaIcons size={25} className='mr-4'></FaIcons> Etkinlikler
                         </li>
