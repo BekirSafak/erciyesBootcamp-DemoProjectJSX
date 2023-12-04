@@ -99,9 +99,9 @@ function Navbar() {
                         <li className='text-xl py-4 flex hover:text-purple-800 duration-300 cursor-pointer'>
                             <FaWallet size={25} className='mr-4'></FaWallet> Biletlerim
                         </li>
-                        <li className='text-xl py-4 flex hover:text-purple-800 duration-300 cursor-pointer'>
+                        <Link to={'/questions'} className='text-xl py-4 flex hover:text-purple-800 duration-300 cursor-pointer'>
                             <MdHelp size={25} className='mr-4'></MdHelp> S.S.S
-                        </li>
+                        </Link>
                     </ul>
                 </nav>
             </div>
