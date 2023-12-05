@@ -39,8 +39,8 @@ function Slider() {
                     </Carousel>
 
                     <div className='px-12 top-1 absolute z-12 w-full h-full text-gray-200 max-h-[600px] bg-black/10 flex flex-col justify-center'>
-                        <h1 className='px-4 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold' >En <span className='text-purple-800'>İyiler</span></h1>
-                        <h1 className='px-4 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold' ><span className='text-purple-800'>Daima </span>Burada!</h1>
+                        <h1 style={{ textShadow: '1px 0px 17px rgba(255,255,255,0.85)' }} className='px-4 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold' >En <span className='text-purple-800'>İyiler</span></h1>
+                        <h1 style={{ textShadow: '1px 0px 17px rgba(255,255,255,0.85)' }} className='px-4 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold' ><span className='text-purple-800'>Daima </span>Burada!</h1>
                     </div>
 
 
