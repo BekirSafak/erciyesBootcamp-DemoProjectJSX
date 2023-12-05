@@ -55,7 +55,7 @@ function Navbar() {
             {/* Left Side End */}
 
             {/* Search Input Start */}
-            <div className='bg-gray-200 rounded-full flex items-center px-2 w-[200px] sm:w-[400px] lg:w-[500px]'>
+            <div className='bg-gray-200 rounded-full flex items-center px-2 w-[100px] sm:w-[300px] lg:w-[400px]'>
                 <AiOutlineSearch size={25}></AiOutlineSearch>
                 {/*   class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" */}
                 <input className='bg-transparent p-2 w-full border-none shadow-sm focus:border-none focus:ring-0 focus:ring-opacity-50' type="text" placeholder='Özgürce tüm etkinleri arayabilirsiniz...' />
@@ -96,9 +96,9 @@ function Navbar() {
                         <li className='text-xl py-4 flex hover:text-purple-800 duration-300 cursor-pointer'>
                             <FaIcons size={25} className='mr-4'></FaIcons> Etkinlikler
                         </li>
-                        <li className='text-xl py-4 flex hover:text-purple-800 duration-300 cursor-pointer'>
+                        <Link to={'/tickets'} className='text-xl py-4 flex hover:text-purple-800 duration-300 cursor-pointer'>
                             <FaWallet size={25} className='mr-4'></FaWallet> Biletlerim
-                        </li>
+                        </Link>
                         <Link to={'/questions'} className='text-xl py-4 flex hover:text-purple-800 duration-300 cursor-pointer'>
                             <MdHelp size={25} className='mr-4'></MdHelp> S.S.S
                         </Link>

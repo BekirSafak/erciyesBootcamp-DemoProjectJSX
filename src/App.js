@@ -10,9 +10,11 @@ import Details from './pages/Details';
 import Campain from './pages/Campain';
 import Orders from './pages/Orders';
 import Favorites from './pages/Favorites';
+import Tickets from './pages/Tickets';
 import Questions from './pages/Questions';
 import ActivitiesDetails from './pages/ActivitiesDetails';
 import { Route, Routes, Link, NavLink, Navigate, useNavigate, Router } from 'react-router-dom';
+
 
 function App() {
   return (
@@ -24,6 +26,7 @@ function App() {
         <Route path='/campains' element={<Campain></Campain>}></Route>
         <Route path='/orders' element={<Orders></Orders>}></Route>
         <Route path='/favorites' element={<Favorites></Favorites>}></Route>
+        <Route path='/tickets' element={<Tickets></Tickets>}></Route>
         <Route path='/questions' element={<Questions></Questions>}></Route>
         <Route path='/activitiesdetails/:id' element={<ActivitiesDetails></ActivitiesDetails>}></Route>
       </Routes>

@@ -95,10 +95,10 @@ function Orders() {
                 </div>
 
                 <div className='border shadow-lg rounded-lg gap-3 flex w-full me-3 my-2 text-center flex-col sm:flex-row '>
-                    <img src={require('../assets/race.jpg')} className='w-full h-[200px] object-fill rounded-lg' />
+                    <img src={require('../assets/singer1.jpg')} className='w-full h-[200px] object-fill rounded-lg' />
                     <div className='flex justify-between px-2 items-center w-full flex-col sm:flex-row '>
                         <div>
-                            <p className='font-bold'>Formula 1 Turkish GP İstanbul</p>
+                            <p className='font-bold'>PERA Konseri</p>
                             <span className='text-sm text-purple-400 font-bold'>Tahmini Kargoya Teslim: 2 Gün</span>
                         </div>
                         <div>
@@ -115,7 +115,7 @@ function Orders() {
                             </label>
                         </div>
                         <div>
-                            <p className='text-gray-700 font-bold p-3'>850TL</p>
+                            <p className='text-gray-700 font-bold p-3'>350TL</p>
                         </div>
                         <div className='p-2'>
                             <AiOutlineClose size={30} className='cursor-pointer hover:text-purple-800'></AiOutlineClose>
