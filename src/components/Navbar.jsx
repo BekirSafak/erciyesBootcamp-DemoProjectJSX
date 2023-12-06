@@ -4,6 +4,7 @@ import { BsFillCartFill } from "react-icons/bs";
 import { TbTruckDelivery } from "react-icons/tb";
 import { MdFavorite, MdHelp } from "react-icons/md";
 import { FaWallet, FaIcons, FaParachuteBox } from "react-icons/fa";
+import { TiWeatherSunny, TiWeatherPartlySunny, TiWeatherShower, TiWeatherCloudy } from "react-icons/ti";
 import { Link } from 'react-router-dom';
 
 function Navbar() {
@@ -22,7 +23,6 @@ function Navbar() {
         localStorage.getItem("theme") === "light" ? "dark" : "light"
     )
 
-
     const changeTheme = () => {
         setTheme(theme === 'light' ? 'dark' : 'light')
         if (theme == 'dark') {
@@ -36,6 +36,23 @@ function Navbar() {
             localStorage.setItem("theme", "light")
         }
     }
+
+    // Weather Dynamic Icons Start
+    const [iconIndex, setIconIndex] = useState(0);
+    const wheatherIcons = [
+        <TiWeatherSunny size={25} className='mr-4'></TiWeatherSunny>,
+        <TiWeatherPartlySunny size={25} className='mr-4'></TiWeatherPartlySunny>,
+        <TiWeatherShower size={25} className='mr-4'></TiWeatherShower>,
+        <TiWeatherCloudy size={25} className='mr-4'></TiWeatherCloudy>
+    ]
+    useEffect(() => {
+        const changeWeatherIcons = setInterval(() => {
+            setIconIndex((prevIndex) => (prevIndex + 1) % wheatherIcons.length);
+        }, 800);
+
+        return () => clearInterval(changeWeatherIcons);
+    }, [wheatherIcons.length]);
+    // Weather Dynamic Icons End
 
     return (
         <div className="max-w-[1640px] mx-auto flex justify-between items-center p-4 sticky top-0 bg-white dark:bg-black z-30">
@@ -95,11 +112,11 @@ function Navbar() {
                         <Link to={'/favorites'} className='text-xl py-4 flex hover:text-purple-800 duration-300 cursor-pointer'>
                             <MdFavorite size={25} className='mr-4'></MdFavorite> Favorilerim
                         </Link>
-                        <li className='text-xl py-4 flex hover:text-purple-800 duration-300 cursor-pointer'>
-                            <FaIcons size={25} className='mr-4'></FaIcons> Etkinlikler
-                        </li>
                         <Link to={'/tickets'} className='text-xl py-4 flex hover:text-purple-800 duration-300 cursor-pointer'>
                             <FaWallet size={25} className='mr-4'></FaWallet> Biletlerim
+                        </Link>
+                        <Link to={'/weather'} className='text-xl py-4 flex hover:text-purple-800 duration-300 cursor-pointer'>
+                            {wheatherIcons[iconIndex]} Hava Durumu
                         </Link>
                         <Link to={'/questions'} className='text-xl py-4 flex hover:text-purple-800 duration-300 cursor-pointer'>
                             <MdHelp size={25} className='mr-4'></MdHelp> S.S.S

@@ -82,7 +82,7 @@ function Activities() {
                         {/* Buy BTN Start */}
                         <div className='flex flex-col md:flex-row justify-between px-2 py-4 border-t-2'>
                             <Link to={`activitiesdetails/${item.id}`} className='my-1 text-center text-xs md:text-base font-bold md:font-normal bg-purple-400 hover:bg-purple-800 duration-300 text-white px-3 py-1 rounded-full border-none'>Detaylar</Link>
-                            <button className='my-1 text-center text-xs md:text-base font-bold md:font-normal bg-purple-800 hover:bg-purple-400 duration-300 text-white px-3 py-1 rounded-full border-none'>Sepete Ekle</button>
+                            <Link to={'/orders'} className='my-1 text-center text-xs md:text-base font-bold md:font-normal bg-purple-800 hover:bg-purple-400 duration-300 text-white px-3 py-1 rounded-full border-none'>Sepete Ekle</Link>
                         </div>
                         {/* Buy BTN End */}
                     </div>

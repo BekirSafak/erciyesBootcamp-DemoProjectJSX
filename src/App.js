@@ -14,6 +14,7 @@ import Tickets from './pages/Tickets';
 import Questions from './pages/Questions';
 import ActivitiesDetails from './pages/ActivitiesDetails';
 import { Route, Routes, Link, NavLink, Navigate, useNavigate, Router } from 'react-router-dom';
+import Weather from './pages/Weather';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route path='/favorites' element={<Favorites></Favorites>}></Route>
         <Route path='/tickets' element={<Tickets></Tickets>}></Route>
         <Route path='/questions' element={<Questions></Questions>}></Route>
+        <Route path='/weather' element={<Weather></Weather>}></Route>
         <Route path='/activitiesdetails/:id' element={<ActivitiesDetails></ActivitiesDetails>}></Route>
       </Routes>
       <Footer></Footer>
