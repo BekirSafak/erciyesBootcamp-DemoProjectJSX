@@ -15,9 +15,9 @@ function Tickets() {
         <div className='max-w-[1640px] mx-auto px-4 py-12'>
             {/* Tickets Filters Start  */}
             <div className='flex flex-wrap m'>
-                <button className='m-1 border-purple-800 text-purple-800 hover:bg-purple-800 hover:text-white'>Tümü</button>
-                <button className='m-1 border-purple-800 text-purple-800 hover:bg-purple-800 hover:text-white'>Yaklaşan Biletler</button>
-                <button className='m-1 border-purple-800 text-purple-800 hover:bg-purple-800 hover:text-white'>Geçen Biletler</button>
+                <button className='text-xs md:text-base font-bold md:font-normal m-1 border-purple-800 text-purple-800 hover:bg-purple-800 hover:text-white'>Tümü</button>
+                <button className='text-xs md:text-base font-bold md:font-normal m-1 border-purple-800 text-purple-800 hover:bg-purple-800 hover:text-white'>Yaklaşan Biletler</button>
+                <button className='text-xs md:text-base font-bold md:font-normal m-1 border-purple-800 text-purple-800 hover:bg-purple-800 hover:text-white'>Geçen Biletler</button>
             </div>
             {/* Tickets Filters End  */}
 

@@ -59,7 +59,7 @@ function Suggestions() {
                         aria-labelledby="modal-modal-title-1"
                         aria-describedby="modal-modal-description-1"
                     >
-                        <Box className='absolute top-2/4 left-2/4 -translate-x-1/2 -translate-y-1/2 bg-white shadow-lg p-6 rounded-xl max-w-[550px] items-center' >
+                        <Box className='absolute top-2/4 left-2/4 -translate-x-1/2 -translate-y-1/2 bg-white shadow-lg p-6 rounded-xl max-w-[550px] w-full items-center' >
                             <Typography id="modal-modal-title" variant="h6" component="h2">
                                 <div className='flex justify-between items-center text-center'>
                                     <p className='select-none font-bold text-purple-800 text-xl md:text-2xl'>Çukurova Rock Festivali</p>
@@ -99,7 +99,7 @@ function Suggestions() {
                         aria-labelledby="modal-modal-title-2"
                         aria-describedby="modal-modal-description-2"
                     >
-                        <Box className='absolute top-2/4 left-2/4 -translate-x-1/2 -translate-y-1/2 bg-white shadow-lg p-6 rounded-xl max-w-[550px] items-center' >
+                        <Box className='absolute top-2/4 left-2/4 -translate-x-1/2 -translate-y-1/2 bg-white shadow-lg p-6 rounded-xl max-w-[550px] w-full items-center' >
                             <Typography id="modal-modal-title-1" variant="h6" component="h2">
                                 <div className='flex justify-between items-center text-center'>
                                     <p className='select-none font-bold text-purple-800 text-xl md:text-2xl'>Güldür Güldür Show</p>
@@ -139,7 +139,7 @@ function Suggestions() {
                         aria-labelledby="modal-modal-title-1"
                         aria-describedby="modal-modal-description-1"
                     >
-                        <Box className='absolute top-2/4 left-2/4 -translate-x-1/2 -translate-y-1/2 bg-white shadow-lg p-6 rounded-xl max-w-[550px] items-center' >
+                        <Box className='absolute top-2/4 left-2/4 -translate-x-1/2 -translate-y-1/2 bg-white shadow-lg p-6 rounded-xl max-w-[550px] w-full items-center' >
                             <Typography id="modal-modal-title-1" variant="h6" component="h2">
                                 <div className='flex justify-between items-center text-center'>
                                     <p className='select-none font-bold text-purple-800 text-xl md:text-2xl'>Gesi Güzelköy Doğa Yürüyüşü</p>
