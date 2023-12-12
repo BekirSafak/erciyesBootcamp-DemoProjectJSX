@@ -75,7 +75,7 @@ function Activities() {
                         <div className='flex justify-between px-2 py-4 h-[75px]'>
                             <p className='font-bold'>{item.name}</p>
                             <p className=''>
-                                <span className='text-xs xl:text-base bg-purple-800 text-white p-1 rounded-full'>{item.price}</span>
+                                <span className='text-xs xl:text-base text-purple-800 font-bold select-none p-1 rounded-full'>{item.price} TL</span>
                             </p>
                         </div>
 

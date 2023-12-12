@@ -4,7 +4,7 @@ export const data = [
         name: 'MilyonFest Kayseri',
         category: 'concert',
         image: require('../assets/concert.jpg'),
-        price: 100,
+        price: 100.10,
         location: {
             lat: 38.7090,
             lng: 35.5328
@@ -15,7 +15,7 @@ export const data = [
         name: 'Çukurova Rock Festivali',
         category: 'concert',
         image: require('../assets/concert1.jpg'),
-        price: 150,
+        price: 150.99,
         location: {
             lat: 37.0138,
             lng: 35.3294
@@ -26,7 +26,7 @@ export const data = [
         name: "WRC Rally Turkey Marmaris",
         category: 'spor',
         image: require('../assets/race1.png'),
-        price: 800,
+        price: 800.99,
         location: {
             lat: 36.8550,
             lng: 28.2704
@@ -37,7 +37,7 @@ export const data = [
         name: 'Formula 1 Turkish GP İstanbul',
         category: 'spor',
         image: require('../assets/race.jpg'),
-        price: 850,
+        price: 850.99,
         location: {
             lat: 40.9526,
             lng: 29.4063
@@ -48,7 +48,7 @@ export const data = [
         name: 'Kapadokya Çadır Kampı',
         category: 'camper',
         image: require('../assets/camper2.jpg'),
-        price: 300,
+        price: 300.99,
         location: {
             lat: 38.6523,
             lng: 34.8236
@@ -59,7 +59,7 @@ export const data = [
         name: 'PERA Konseri',
         category: 'music',
         image: require('../assets/singer1.jpg'),
-        price: 350,
+        price: 350.99,
         location: {
             lat: 38.7499,
             lng: 35.4910
@@ -70,7 +70,7 @@ export const data = [
         name: 'Güldür Güldür Show',
         category: 'theatre',
         image: require('../assets/theatre1.jpg'),
-        price: 400,
+        price: 400.99,
         location: {
             lat: 38.7499,
             lng: 35.4910
@@ -81,7 +81,7 @@ export const data = [
         name: 'Çok Güzel Hareketler 2',
         category: 'theatre',
         image: require('../assets/theatre.jpg'),
-        price: 450,
+        price: 450.99,
         location: {
             lat: 38.7263,
             lng: 35.4849
@@ -92,7 +92,7 @@ export const data = [
         name: "90'lar Dans Gecesi",
         category: 'dance',
         image: require('../assets/dance.jpg'),
-        price: 500,
+        price: 500.99,
         location: {
             lat: 38.5376,
             lng: 35.5270
@@ -103,7 +103,7 @@ export const data = [
         name: 'Sahne Senin Karaoke Etkinliği',
         category: 'singer',
         image: require('../assets/singer.jpg'),
-        price: 550,
+        price: 550.99,
         location: {
             lat: 38.7102,
             lng: 35.5541
@@ -114,7 +114,7 @@ export const data = [
         name: 'Gesi Güzelköy Doğa Yürüyüşü',
         category: 'camper',
         image: require('../assets/camper1.jpg'),
-        price: 250,
+        price: 250.99,
         location: {
             lat: 38.7689,
             lng: 35.6653
@@ -125,7 +125,7 @@ export const data = [
         name: 'The Fast And The Furious ',
         category: 'cinema',
         image: require('../assets/cinema.jpg'),
-        price: 200,
+        price: 200.99,
         location: {
             lat: 38.7327,
             lng: 35.5182
