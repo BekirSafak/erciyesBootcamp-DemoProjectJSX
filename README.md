@@ -33,6 +33,7 @@ Bu proje, Türkiye ve dünyadaki gerçekleşecek olan konserleri, tiyatroları, 
 
 ### 27' Ekran Görüntüsüdür fakat sitemiz en küçük mobil cihazlar dahil full responsive yapıdadır.
 ![site1](src/assets/readMeImg/site1.png)
+![site1.1](src/assets/readMeImg/site1.1.png)
 ![site2](src/assets/readMeImg/site2.png)
 ![site2.1](src/assets/readMeImg/site2.1.png)
 ![site3](src/assets/readMeImg/site3.png)
