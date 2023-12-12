@@ -40,6 +40,13 @@ function Weather() {
     };
     // Weathear Status Translate End
 
+    // Get Today Date "yyyy-MM-dd" Format Start
+    const formatDate = (dateString) => {
+        const options = { day: 'numeric', month: 'long', year: 'numeric' };
+        return new Date(dateString).toLocaleDateString('tr-TR', options);
+    };
+    // Get Today Date "yyyy-MM-dd" Format End
+
     useEffect(() => {
         let fetchData = async () => {
             try {
@@ -98,7 +105,7 @@ function Weather() {
                         {
                             weatherData.forecast.forecastday.map((day) => (
                                 <div key={day.date} className='flex flex-col border shadow-lg rounded-lg w-full'>
-                                    <h1 className='py-2 text-center text-purple-800 font-bold select-none border-t border-b rounded-t-lg'>{day.date}</h1>
+                                    <h1 className='py-2 text-center text-purple-800 font-bold select-none border-t border-b rounded-t-lg'>{formatDate(day.date)}</h1>
                                     <img src={day.day.condition.icon} alt="img" className='w-full h-[200px] object-fill border-b' />
                                     <div className='py-2'>
                                         <p className=' text-gray-700 font-bold select-none text-sm xl:text-base'>{day.day.avgtemp_c}°C</p>

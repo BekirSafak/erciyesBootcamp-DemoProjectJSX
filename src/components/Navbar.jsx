@@ -6,36 +6,37 @@ import { MdFavorite, MdHelp } from "react-icons/md";
 import { FaWallet, FaIcons, FaParachuteBox } from "react-icons/fa";
 import { TiWeatherSunny, TiWeatherPartlySunny, TiWeatherShower, TiWeatherCloudy } from "react-icons/ti";
 import { Link } from 'react-router-dom';
+import axios from 'axios'
 
 function Navbar() {
 
-    useEffect(() => {
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark')
-        } else {
-            document.documentElement.classList.remove('dark')
-        }
-    }, [])
-
     let [nav, setNavbar] = useState(false);
 
-    const [theme, setTheme] = useState(
-        localStorage.getItem("theme") === "light" ? "dark" : "light"
-    )
+    let [weatherData, setWeatherData] = useState(null)
+    let [locationWeather, setLocationWeather] = useState('Kayseri')
 
-    const changeTheme = () => {
-        setTheme(theme === 'light' ? 'dark' : 'light')
-        if (theme == 'dark') {
-            document.documentElement.classList.remove('light')
-            document.documentElement.classList.add('dark')
-            localStorage.setItem("theme", "dark")
+    useEffect(() => {
+        let fetchData = async () => {
+            try {
+                // It's different from the Weather.jsx &days=1&aqi
+                let response = await axios.get(`http://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_KEY}&q=${locationWeather}&days=1&aqi=yes&alerts=yes`);
+                setWeatherData(response.data);
+                console.log(response);
+            } catch (error) {
+                console.log(error);
+            }
+        };
 
-        } else {
-            document.documentElement.classList.remove('dark')
-            document.documentElement.classList.add('light')
-            localStorage.setItem("theme", "light")
+        if (locationWeather) {
+            fetchData();
         }
-    }
+    }, [locationWeather]);
+
+    const formatDate = (dateString) => {
+        const options = { day: 'numeric', month: 'long', year: 'numeric' };
+        return new Date(dateString).toLocaleDateString('tr-TR', options);
+    };
+    // Get Today Date "yyyy-MM-dd" Format End
 
     // Weather Dynamic Icons Start
     const [iconIndex, setIconIndex] = useState(0);
@@ -55,7 +56,7 @@ function Navbar() {
     // Weather Dynamic Icons End
 
     return (
-        <div className="max-w-[1640px] mx-auto flex justify-between items-center p-4 sticky top-0 bg-white dark:bg-black z-30">
+        <div className="max-w-[1640px] mx-auto flex justify-between items-center p-4 sticky top-0 bg-white z-30">
             {/* Left Side Start */}
             <div className='flex items-center'>
                 <div onClick={() => setNavbar(!nav)} className='cursor-pointer'>
@@ -64,9 +65,25 @@ function Navbar() {
                 <Link to={'/'}>
                     <h1 className='text-2xl sm:text-3xl lg:text-4xl px-2 text-purple-400'>Erciyes<span className='font-bold text-purple-800'>Kayseri</span></h1>
                 </Link>
-                <div className='hidden lg:flex item-center bg-gray-200 rounded-full p-1 text[14px]'>
-                    <p className='bg-black text-white rounded-full p-2 cursor-pointer' onClick={changeTheme}>{theme}</p>
-                    <p className='p-2'>On</p>
+                <div className='hidden lg:flex item-center p-1'>
+                    {/* Weather Day Box Start */}
+                    {weatherData && (
+                        <div className=''>
+                            <div className='flex flex-col md:flex-row justify-between'>
+                                {
+                                    weatherData.forecast.forecastday.map((day) => {
+                                        return (
+                                            <div key={day.date} className={`flex items-center`}>
+                                                <img src={day.day.condition.icon} alt="img" className='h-[30px] w-[30px] object-fill' />
+                                                <h1 className='py-2 text-center text-xs text-purple-800 font-bold select-none'>{formatDate(day.date)}</h1>
+                                            </div>
+                                        );
+                                    })
+                                }
+                            </div>
+                        </div>
+                    )}
+                    {/* Weather Day Box End */}
                 </div>
             </div>
             {/* Left Side End */}
