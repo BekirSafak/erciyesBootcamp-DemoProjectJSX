@@ -7,6 +7,7 @@ import { FaWallet, FaIcons, FaParachuteBox } from "react-icons/fa";
 import { TiWeatherSunny, TiWeatherPartlySunny, TiWeatherShower, TiWeatherCloudy } from "react-icons/ti";
 import { Link } from 'react-router-dom';
 import axios from 'axios'
+import { data } from '../data/data.js';
 
 function Navbar() {
 
@@ -15,6 +16,22 @@ function Navbar() {
     let [weatherData, setWeatherData] = useState(null)
     let [locationWeather, setLocationWeather] = useState('Kayseri')
 
+    // Search Input Data Filter Start
+    const [searchTerm, setSearchTerm] = useState('');
+    const [filteredData, setFilteredData] = useState([]);
+    const [valIn, setValIn] = useState('')
+
+    const searchInput = (value) => {
+        setSearchTerm(value);
+
+        const filteredResults = data.filter(item => item.name.toLowerCase().includes(value.toLowerCase()));
+        setFilteredData(filteredResults);
+        console.log(filteredResults)
+        setValIn(value)
+    };
+    // Search Input Data Filter End
+
+    // Get Today Date "yyyy-MM-dd" Format Start
     useEffect(() => {
         let fetchData = async () => {
             try {
@@ -89,10 +106,27 @@ function Navbar() {
             {/* Left Side End */}
 
             {/* Search Input Start */}
-            <div className='bg-gray-200 rounded-full flex items-center px-2 w-[100px] sm:w-[300px] lg:w-[400px]'>
-                <AiOutlineSearch size={25}></AiOutlineSearch>
-                {/*   class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" */}
-                <input className='bg-transparent p-2 w-full border-none shadow-sm focus:border-none focus:ring-0 focus:ring-opacity-50' type="text" placeholder='Özgürce tüm etkinleri arayabilirsiniz...' />
+            <div className='rounded-full hidden md:flex items-center px-2 w-[100px] sm:w-[300px] lg:w-[400px]'>
+                <div className='flex flex-col relative'>
+                    <div className='bg-gray-200 rounded-full flex items-center px-2 w-[100px] sm:w-[300px] lg:w-[400px]'>
+                        <AiOutlineSearch size={25}></AiOutlineSearch>
+                        <input onChange={(e) => searchInput(e.target.value)} className='bg-transparent p-2 w-full border-none shadow-sm focus:border-none focus:ring-0 focus:ring-opacity-50' type="text" placeholder='Özgürce tüm etkinleri arayabilirsiniz...' />
+                    </div>
+                    {/* Search Input End */}
+
+                    {valIn &&
+                        <div className='absolute hidden md:flex flex-col max-w-[500px] w-full top-12'>
+                            {filteredData.map((item, index) => (
+                                <div key={index} className='flex border shadow-lg rounded-lg hover:scale-105 duration-300'>
+                                    <img src={item.image} alt={item.name} className='w-full max-w-[100px] object-fill' />
+                                    <div className='flex justify-between px-2 py-4 bg-white w-full'>
+                                        <p className='font-bold'>{item.name}</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    }
+                </div>
             </div>
             {/* Search Input End */}
 
