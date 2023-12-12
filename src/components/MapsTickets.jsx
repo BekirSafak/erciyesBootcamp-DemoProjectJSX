@@ -1,37 +1,38 @@
-import React from 'react'
-import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
+import React, { useState, useRef } from 'react'
 import { useParams } from 'react-router-dom';
 import { data } from "../data/data.js";
-import { colors } from '@mui/material';
+import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet'
+import "leaflet/dist/leaflet.css"
+import { Icon } from 'leaflet';
 
-function Maps(maps) {
-    const { isLoaded } = maps
-    const containerStyle = {
-        width: '100%',
-        height: '200px',
-        borderRadius: '8px',
-        // borderBottomLeftRadius: '8px',
-        // borderBottomRightRadius: '8px',
-    };
+function MapsTickets() {
 
-    const center = {
-        lat: 38.746,
-        lng: 35.530
-    };
+    const mapRef = useRef()
+    const ZOOM_LEVEL = 15
+    const customMarkerIcon = new Icon({
+        iconUrl: require('../assets/marker.png'),
+        iconSize: [38, 38]
+    });
 
-    return isLoaded && (
-        <GoogleMap
-            mapContainerStyle={containerStyle}
-            center={center}
-            zoom={15}
-            options={{
-                mapTypeId: 'terrain',
-            }}
-        >
-            <Marker></Marker>
-        </GoogleMap>
+
+    const { id } = useParams();
+    let locationsID = data.find(q => q.id == id)
+    console.log(locationsID)
+    console.log(id)
+
+    return (
+        <MapContainer center={[38.7090, 35.5328]} zoom={ZOOM_LEVEL} ref={mapRef}>
+            <TileLayer
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                url='https://tile.openstreetmap.org/{z}/{x}/{y}.png'
+            />
+            <Marker position={[38.7090, 35.5328]} icon={customMarkerIcon}></Marker>
+        </MapContainer>
+
     )
 }
 
 
-export default Maps
+export default MapsTickets
+
+

@@ -2,16 +2,9 @@ import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { data } from "../data/data.js";
 import Maps from '../components/Maps.jsx';
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
-import { mapOptions } from '../components/MapConfing.jsx';
 
 
 function ActivitiesDetails() {
-    const { isLoaded } = useJsApiLoader({
-        id: mapOptions.googleMapApiKey,
-        googleMapsApiKey: mapOptions.googleMapApiKey
-    })
-
     const { id } = useParams()
 
     let activityID = data.find(q => q.id == id);
@@ -103,7 +96,9 @@ function ActivitiesDetails() {
                 {/* Forms End */}
 
             </div>
-            <Maps isLoaded={isLoaded} ></Maps>
+            <div className='relative h-[600px] w-full -z-10'>
+                <Maps></Maps>
+            </div>
 
         </div>
     )

@@ -7,3 +7,10 @@
     @apply border border-black rounded-xl px-5 py-1;
   }
 }
+
+/* Leaflet Maps Style Start */
+.leaflet-container {
+  height: 100%;
+}
+
+/* Leaflet Maps Style End */

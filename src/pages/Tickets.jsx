@@ -1,15 +1,8 @@
 import React from 'react'
 import { useParams } from 'react-router-dom';
 import MapsTickets from '../components/MapsTickets.jsx'
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
-import { mapOptions } from '../components/MapConfing.jsx';
 
 function Tickets() {
-
-    const { isLoaded } = useJsApiLoader({
-        id: mapOptions.googleMapApiKey,
-        googleMapsApiKey: mapOptions.googleMapApiKey
-    })
 
     return (
         <div className='max-w-[1640px] mx-auto px-4 py-12'>
@@ -142,7 +135,9 @@ function Tickets() {
                     <div className='border shadow-lg rounded-lg p-6 sticky top-20'>
                         <h2 className='mb-2 text-center text-purple-800 font-bold select-none'>Etkinlik Konumu</h2>
                         {/* Tickets Maps Details Start */}
-                        <MapsTickets className="w-full" isLoaded={isLoaded}></MapsTickets>
+                        <div className='h-[300px] w-full'>
+                            <MapsTickets></MapsTickets>
+                        </div>
                         {/* Tickets Maps Details End*/}
                         <div className='my-3 text-center flex justify-center'>
                             <label className="block">
