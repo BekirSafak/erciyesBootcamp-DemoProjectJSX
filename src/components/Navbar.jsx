@@ -36,7 +36,7 @@ function Navbar() {
         let fetchData = async () => {
             try {
                 // It's different from the Weather.jsx &days=1&aqi
-                let response = await axios.get(`http://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_KEY}&q=${locationWeather}&days=1&aqi=yes&alerts=yes`);
+                let response = await axios.get(`https://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_KEY}&q=${locationWeather}&days=1&aqi=yes&alerts=yes`);
                 setWeatherData(response.data);
                 console.log(response);
             } catch (error) {
