@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# Tech Career Erciyes Teknopark Bootcamp Bitirme Projesi
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Bu proje, Türkiye ve dünyadaki gerçekleşecek olan konserleri, tiyatroları, spor faliyetlerini ve aklınıza gelebilecek bir çok etkinliği görebileceğiniz bir web uygulamasıdır. Sitemiz tüm teknolojik ekranlar için full responsive olarak kodlanmıştır. Sitemiz gerçekleşecek etkinlikleri tarihine, konumuna, fiyatına ve alanına göre filtreleyerek gösterebilir. Aynı zamanda dünyadaki tüm etkinliklerin günlük hava durumunu size meteorolojiden anlık olarak aldığı verilerle gösterebilir. Üstelik isterseniz bulunduğunuz konuma göre 4 günlük hava durumunu anlık olarak görebilirsiniz. Çok daha fazla özellik ve çok daha fazla etkinlik için sitemizi ziyaret edebilirsiniz.
 
-## Available Scripts
+## Kullanılan Teknolojiler
+* React.JS = Kullanıcı arayüzleri oluşturmak için kullanılan bir Javascript kütüphanesi.
+* Axios = Sunucuya istek yapmak için kullanılan promise tabanlı bir HTTP istemcisi. 
+* React Router = Bir React uygulamasındaki farklı bileşenler arasında gezinme işlemleri için deklaratif bir yol.
+* React Leaflet = Leaflet harita kütüphanesi için bir React sarmalayıcı.
+* React Icon = React için icon kütüphanesi.
+* Tailwind CSS = Uygulamanın kusursuz bir görünüşe ve full responsive yapıya sahip olması için kullanılan CSS framework'ü.
+* Material UI = React tabanlı web uygulamaları geliştirmek için yaygın olarak kullanılan bir kütüphanedir.
+* Enviroment (.env) = Çevresel değişkenleri saklamak ve yönetmek için kullanılan bir dosya türüdür.
+* Weatherapi = Küresel hava durumu veritabanına gerçek zamanlı erişim.
+* Html, Css, Js = Temel kullanım gereksinimleri.
 
-In the project directory, you can run:
+### Sayfalar
+* Ana sayfa = Bir çok temel detayı burada görebilirsiniz.
+* Kampanyalar = Sitemizin ve çeşitli partnerlerin sizlere sunduğu kampanyaları görebilirsiniz.
+* Siparişlerim = Tüm sepet ve sipariş işlemlerinizi burada görebilirsiniz. 
+* Favorilerim = Favori etkinliklerinizi buradan yönetebilirsiniz.
+* Biletlerim = Etkinlik biletlerinizi buradan görebilir konum ve tarih bilgilerini detaylı öğrenebilirsiniz.
+* Hava Durumu = Bulunduğunuz şehir veya etkinlik konumuna göre biletinizi almadana önce ya da aldıktan sonra 4 günlük hava durumunu detaylı olarak arayabilirsiniz.
+* S.S.S = Kafanıza takılan bir çok soruya cevap bulabilirsiniz.
 
-### `npm start`
+### Site Kullanımı
+* Ana sayfamız üzerinde sitemizin önerilen etkinliklerini, tüm etkinliklerini, en çok tercih edilen 3 etkinliği görebilirsiniz.
+* Arama çubuklarında istediğiniz etkinlikleri, biletlerinizi, favorilerinizi vs. arayabilirsiniz.
+* Detaylı ve pratik aramalar gerçekleşirebilmek için sayfalardaki filtreleme buttonlarını kullanabilirsiniz.
+* Sol üst menu iconuna tıklayarak sidemenu üzerinden sitenin size sunduğu tüm sayfalara ulaşabilirsiniz.
+* Hava durumu sekmesinden biletinizi almadan önce bulunduğunuz şehire göre veya etkinlik konumuna göre 4 günlük hava durumunu anlık olarak arayabilirsiniz.
+* Siteye eklenen büyük yenilikler buraya eklenmeye devam edecektir.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 27' Ekran Görüntüsüdür fakat sitemiz en küçük mobil cihazlar dahil full responsive yapıdadır.
+![site1](src/assets/readMeImg/site1.png)
+![site2](src/assets/readMeImg/site2.png)
+![site2.1](src/assets/readMeImg/site2.1.png)
+![site3](src/assets/readMeImg/site3.png)
+![site4](src/assets/readMeImg/site4.png)
+![site4.1](src/assets/readMeImg/site4.1.png)
+![site5](src/assets/readMeImg/site5.png)
+![site6](src/assets/readMeImg/site6.png)
+![site7](src/assets/readMeImg/site7.png)
+![site8](src/assets/readMeImg/site8.png)
+![site9](src/assets/readMeImg/site9.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
