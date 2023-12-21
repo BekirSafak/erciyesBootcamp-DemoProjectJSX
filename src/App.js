@@ -15,23 +15,26 @@ import Questions from './pages/Questions';
 import ActivitiesDetails from './pages/ActivitiesDetails';
 import { Route, Routes, Link, NavLink, Navigate, useNavigate, Router } from 'react-router-dom';
 import Weather from './pages/Weather';
+import { ActivitiesProvider } from './context/activitiesContext';
 
 
 function App() {
   return (
     <div>
       <Navbar></Navbar>
-      <Routes>
-        <Route path='/' element={<Homemain></Homemain>}></Route>
-        <Route path='/details' element={<Details></Details>}></Route>
-        <Route path='/campains' element={<Campain></Campain>}></Route>
-        <Route path='/orders' element={<Orders></Orders>}></Route>
-        <Route path='/favorites' element={<Favorites></Favorites>}></Route>
-        <Route path='/tickets' element={<Tickets></Tickets>}></Route>
-        <Route path='/questions' element={<Questions></Questions>}></Route>
-        <Route path='/weather' element={<Weather></Weather>}></Route>
-        <Route path='/activitiesdetails/:id' element={<ActivitiesDetails></ActivitiesDetails>}></Route>
-      </Routes>
+      <ActivitiesProvider>
+        <Routes>
+          <Route path='/' element={<Homemain></Homemain>}></Route>
+          <Route path='/details' element={<Details></Details>}></Route>
+          <Route path='/campains' element={<Campain></Campain>}></Route>
+          <Route path='/orders' element={<Orders></Orders>}></Route>
+          <Route path='/favorites' element={<Favorites></Favorites>}></Route>
+          <Route path='/tickets' element={<Tickets></Tickets>}></Route>
+          <Route path='/questions' element={<Questions></Questions>}></Route>
+          <Route path='/weather' element={<Weather></Weather>}></Route>
+          <Route path='/activitiesdetails/:id' element={<ActivitiesDetails></ActivitiesDetails>}></Route>
+        </Routes>
+      </ActivitiesProvider>
       <Footer></Footer>
     </div>
   );

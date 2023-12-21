@@ -3,7 +3,7 @@ import { FaFacebookF, FaInstagram, FaYoutube, FaTwitter } from "react-icons/fa6"
 
 function Footer() {
     return (
-        <div className='bg-purple-100'>
+        <div className='bg-purple-100 pb-10'>
             <div className='max-w-[1640px] mx-auto items-center p-4'>
                 <div className='flex flex-col md:flex-row items-center justify-between w-full'>
                     <h1 className='text-2xl sm:text-3xl lg:text-4xl text-purple-400 cursor-pointer'>Erciyes<span className='font-bold text-purple-800'>Kayseri</span></h1>

@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { data } from '../data/data.js';
 import { Link } from 'react-router-dom';
+import { FaHeartCirclePlus } from "react-icons/fa6";
+import ActivitiesCard from './ActivitiesCard.jsx';
 
 function Activities() {
     console.log(data)
@@ -70,25 +72,11 @@ function Activities() {
             {/* Activty Start */}
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pt-4'>
                 {activity.map((item, index) => (
-                    <div key={index} className='border shadow-lg rounded-lg hover:scale-105 duration-300'>
-                        <img src={item.image} alt={item.name} className='w-full h-[200px] object-fill rounded-t-lg' />
-                        <div className='flex justify-between px-2 py-4 h-[75px]'>
-                            <p className='font-bold'>{item.name}</p>
-                            <p className=''>
-                                <span className='text-xs xl:text-base text-purple-800 font-bold select-none p-1 rounded-full'>{item.price} TL</span>
-                            </p>
-                        </div>
-
-                        {/* Buy BTN Start */}
-                        <div className='flex flex-col md:flex-row justify-between px-2 py-4 border-t-2'>
-                            <Link to={`activitiesdetails/${item.id}`} className='my-1 text-center text-xs md:text-base font-bold md:font-normal bg-purple-400 hover:bg-purple-800 duration-300 text-white px-3 py-1 rounded-full border-none'>Detaylar</Link>
-                            <Link to={'/orders'} className='my-1 text-center text-xs md:text-base font-bold md:font-normal bg-purple-800 hover:bg-purple-400 duration-300 text-white px-3 py-1 rounded-full border-none'>Sepete Ekle</Link>
-                        </div>
-                        {/* Buy BTN End */}
-                    </div>
+                    <ActivitiesCard key={index} item={item}></ActivitiesCard>
                 ))}
             </div>
             {/* Activty End */}
+
         </div>
     )
 }

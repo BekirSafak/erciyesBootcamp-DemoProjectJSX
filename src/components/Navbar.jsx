@@ -24,7 +24,7 @@ function Navbar() {
     const searchInput = (value) => {
         setSearchTerm(value);
 
-        const filteredResults = data.filter(item => item.name.toLowerCase().includes(value.toLowerCase()));
+        const filteredResults = data.filter(item => item.name.toLocaleLowerCase('TR').includes(value.toLocaleLowerCase('TR')));
         setFilteredData(filteredResults);
         console.log(filteredResults)
         setValIn(value)

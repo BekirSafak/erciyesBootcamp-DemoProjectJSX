@@ -1,129 +1,40 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { TbTruckDelivery, } from 'react-icons/tb'
 import { AiOutlineClose } from "react-icons/ai";
+import { ActivitiesContext } from '../context/activitiesContext';
+import OrderCard from './OrderCard';
+import { SlBasket } from "react-icons/sl";
+import { requirePropFactory } from '@mui/material';
+import { act } from 'react-dom/test-utils';
+
 
 function Orders() {
+    const { activities } = useContext(ActivitiesContext)
+
+    console.log("activities", activities);
+
+    var totalPrice = activities.reduce((accumulator, activity) => {
+        return accumulator + (Number(activity.quantity) * Number(activity.price));
+    }, 0);
+
     return (
         <div className='max-w-[1640px] mx-auto px-4 py-12 flex flex-col lg:flex-row justify-items-center'>
-            <div className='flex flex-wrap gap-3 w-full justify-between mx-auto '>
-                {/* Orders Basket Cards Start */}
-                <div className='border shadow-lg rounded-lg gap-3 flex w-full me-3 my-2 text-center flex-col sm:flex-row '>
-                    <img src={require('../assets/concert.jpg')} className='w-full h-[200px] object-fill rounded-lg' />
-                    <div className='flex justify-between px-2 items-center w-full flex-col sm:flex-row '>
-                        <div>
-                            <p className='font-bold'>MilyonFest Kayseri</p>
-                            <span className='text-sm text-purple-400 font-bold'>Tahmini Kargoya Teslim: 2 Gün</span>
-                        </div>
-                        <div>
-                            <label className="block">
-                                <span className="text-gray-700 font-bold">Adet</span>
-                                <input
-                                    type='number'
-                                    max={10}
-                                    min={0}
-                                    placeholder='1'
-                                    className="block w-full mt-1 rounded-md border-gray-300 shadow-sm focus:border-purple-800 focus:ring focus:ring-purple-400 focus:ring-opacity-50"
-                                >
-                                </input>
-                            </label>
-                        </div>
-                        <div>
-                            <p className='text-gray-700 font-bold p-3'>100TL</p>
-                        </div>
-                        <div className='p-2'>
-                            <AiOutlineClose size={30} className='cursor-pointer hover:text-purple-800'></AiOutlineClose>
-                        </div>
+            {/* Orders Basket Cards Start */}
+            <div className='flex flex-wrap gap-3 w-full justify-between mx-auto'>
+                {activities.length === 0 ? (
+                    <div className='border h-auto lg:h-[400px] shadow-lg rounded-lg gap-3 flex flex-col items-center justify-center w-full me-3 my-2 p-8 text-center'>
+                        <img className='h-full w-[250px] object-fill rounded-lg' src={require('../assets/trolley-cart.png')} alt="" />
+                        <h1 className='text-purple-800 font-bold text-2xl md:text-4xl mt-4 text-center'>Sepetiniz Boş...</h1>
                     </div>
-                </div>
 
-                <div className='border shadow-lg rounded-lg gap-3 flex w-full me-3 my-2 text-center flex-col sm:flex-row '>
-                    <img src={require('../assets/concert1.jpg')} className='w-full h-[200px] object-fill rounded-lg' />
-                    <div className='flex justify-between px-2 items-center w-full flex-col sm:flex-row '>
-                        <div>
-                            <p className='font-bold'>Çukurova Rock Festivali</p>
-                            <span className='text-sm text-purple-400 font-bold'>Tahmini Kargoya Teslim: 2 Gün</span>
-                        </div>
-                        <div>
-                            <label className="block">
-                                <span className="text-gray-700 font-bold">Adet</span>
-                                <input
-                                    type='number'
-                                    max={10}
-                                    min={0}
-                                    placeholder='1'
-                                    className="block w-full mt-1 rounded-md border-gray-300 shadow-sm focus:border-purple-800 focus:ring focus:ring-purple-400 focus:ring-opacity-50"
-                                >
-                                </input>
-                            </label>
-                        </div>
-                        <div>
-                            <p className='text-gray-700 font-bold p-3'>150TL</p>
-                        </div>
-                        <div className='p-2'>
-                            <AiOutlineClose size={30} className='cursor-pointer hover:text-purple-800'></AiOutlineClose>
-                        </div>
-                    </div>
-                </div>
-
-                <div className='border shadow-lg rounded-lg gap-3 flex w-full me-3 my-2 text-center flex-col sm:flex-row '>
-                    <img src={require('../assets/race1.png')} className='w-full h-[200px] object-fill rounded-lg' />
-                    <div className='flex justify-between px-2 items-center w-full flex-col sm:flex-row '>
-                        <div>
-                            <p className='font-bold'>WRC Rally Turkey Marmaris</p>
-                            <span className='text-sm text-purple-400 font-bold'>Tahmini Kargoya Teslim: 2 Gün</span>
-                        </div>
-                        <div>
-                            <label className="block">
-                                <span className="text-gray-700 font-bold">Adet</span>
-                                <input
-                                    type='number'
-                                    max={10}
-                                    min={0}
-                                    placeholder='1'
-                                    className="block w-full mt-1 rounded-md border-gray-300 shadow-sm focus:border-purple-800 focus:ring focus:ring-purple-400 focus:ring-opacity-50"
-                                >
-                                </input>
-                            </label>
-                        </div>
-                        <div>
-                            <p className='text-gray-700 font-bold p-3'>800TL</p>
-                        </div>
-                        <div className='p-2'>
-                            <AiOutlineClose size={30} className='cursor-pointer hover:text-purple-800'></AiOutlineClose>
-                        </div>
-                    </div>
-                </div>
-
-                <div className='border shadow-lg rounded-lg gap-3 flex w-full me-3 my-2 text-center flex-col sm:flex-row '>
-                    <img src={require('../assets/singer1.jpg')} className='w-full h-[200px] object-fill rounded-lg' />
-                    <div className='flex justify-between px-2 items-center w-full flex-col sm:flex-row '>
-                        <div>
-                            <p className='font-bold'>PERA Konseri</p>
-                            <span className='text-sm text-purple-400 font-bold'>Tahmini Kargoya Teslim: 2 Gün</span>
-                        </div>
-                        <div>
-                            <label className="block">
-                                <span className="text-gray-700 font-bold">Adet</span>
-                                <input
-                                    type='number'
-                                    max={10}
-                                    min={0}
-                                    placeholder='1'
-                                    className="block w-full mt-1 rounded-md border-gray-300 shadow-sm focus:border-purple-800 focus:ring focus:ring-purple-400 focus:ring-opacity-50"
-                                >
-                                </input>
-                            </label>
-                        </div>
-                        <div>
-                            <p className='text-gray-700 font-bold p-3'>350TL</p>
-                        </div>
-                        <div className='p-2'>
-                            <AiOutlineClose size={30} className='cursor-pointer hover:text-purple-800'></AiOutlineClose>
-                        </div>
-                    </div>
-                </div>
-                {/* Orders Basket Cards End */}
+                ) : (
+                    activities.map((item, index) => (
+                        <OrderCard key={index} item={item} />
+                    ))
+                )}
             </div>
+            {/* Orders Basket Cards End */}
+
 
             {/* Orders Right Details and Buttons Start */}
             <div className='my-2 me-3'>
@@ -132,7 +43,7 @@ function Orders() {
                     <p className='text-gray-800 text-base font-bold mb-2'>Toplam Ürün Adeti: <span>3 Adet</span></p>
                     <p className='text-gray-800 text-base font-bold mb-2'>Toplam Fiyat: <span>1000TL</span></p>
                     <p className='text-gray-800 text-base font-bold mb-2'>Kargo Toplam: <span>50TL</span></p>
-                    <p className='text-gray-800 text-base font-bold mb-2'>Genel Toplam: <span>1050TL</span></p>
+                    <p className='text-gray-800 text-base font-bold mb-2'>Genel Toplam: <span>{totalPrice.toFixed(2)}</span></p>
                     <div className='my-3'>
                         <label className="block">
                             <input
