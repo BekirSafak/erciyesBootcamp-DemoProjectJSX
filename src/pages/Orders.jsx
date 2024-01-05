@@ -17,6 +17,10 @@ function Orders() {
         return accumulator + (Number(activity.quantity) * Number(activity.price));
     }, 0);
 
+    var totalOrder = activities.reduce((accumulator, activity) => {
+        return accumulator + (Number(activity.quantity));
+    }, 0);
+
     return (
         <div className='max-w-[1640px] mx-auto px-4 py-12 flex flex-col lg:flex-row justify-items-center'>
             {/* Orders Basket Cards Start */}
@@ -40,7 +44,7 @@ function Orders() {
             <div className='my-2 me-3'>
                 <div className='border shadow-lg rounded-lg p-6 sticky top-20'>
                     <h2 className='text-purple-800 text-2xl font-bold mb-2'>Sipariş Özeti</h2>
-                    <p className='text-gray-800 text-base font-bold mb-2'>Toplam Ürün Adeti: <span>3 Adet</span></p>
+                    <p className='text-gray-800 text-base font-bold mb-2'>Toplam Ürün Adeti: <span>{totalOrder}</span></p>
                     <p className='text-gray-800 text-base font-bold mb-2'>Toplam Fiyat: <span>1000TL</span></p>
                     <p className='text-gray-800 text-base font-bold mb-2'>Kargo Toplam: <span>50TL</span></p>
                     <p className='text-gray-800 text-base font-bold mb-2'>Genel Toplam: <span>{totalPrice.toFixed(2)}</span></p>

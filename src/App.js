@@ -21,8 +21,8 @@ import { ActivitiesProvider } from './context/activitiesContext';
 function App() {
   return (
     <div>
-      <Navbar></Navbar>
       <ActivitiesProvider>
+        <Navbar></Navbar>
         <Routes>
           <Route path='/' element={<Homemain></Homemain>}></Route>
           <Route path='/details' element={<Details></Details>}></Route>

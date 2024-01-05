@@ -1,4 +1,4 @@
-import { React, useEffect, useState } from 'react'
+import { React, useEffect, useState, useContext } from 'react'
 import { AiOutlineClose, AiOutlineMenu, AiOutlineSearch } from "react-icons/ai";
 import { BsFillCartFill } from "react-icons/bs";
 import { TbTruckDelivery } from "react-icons/tb";
@@ -8,8 +8,15 @@ import { TiWeatherSunny, TiWeatherPartlySunny, TiWeatherShower, TiWeatherCloudy 
 import { Link } from 'react-router-dom';
 import axios from 'axios'
 import { data } from '../data/data.js';
+import { ActivitiesContext } from '../context/activitiesContext.jsx';
 
 function Navbar() {
+
+    const { activities } = useContext(ActivitiesContext)
+
+    var totalOrder = activities.reduce((accumulator, activity) => {
+        return accumulator + (Number(activity.quantity));
+    }, 0);
 
     let [nav, setNavbar] = useState(false);
 
@@ -134,7 +141,7 @@ function Navbar() {
             <Link to={'/orders'} className='relative bg-purple-800 hover:bg-purple-400 duration-300 text-white hidden md:flex items-center px-5 py-2 rounded-full border-none'>
                 <BsFillCartFill size={20} className='mr-2'></BsFillCartFill> Sepet
                 <div className='bg-purple-400 hover:bg-purple-800 w-6 h-6 rounded-full flex items-center justify-center absolute -bottom-1 -left-2'>
-                    <span>4</span>
+                    <span>{totalOrder}</span>
                 </div>
             </Link>
             {/* Cart Button End */}
